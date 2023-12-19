@@ -1,4 +1,4 @@
-import { Environment, MeshPortalMaterial, OrbitControls, RoundedBox, useTexture } from "@react-three/drei";
+import { Environment, MeshPortalMaterial, RoundedBox, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { Ninja } from "./Ninja";
 import { Tribal } from "./Tribal";
@@ -46,7 +46,7 @@ export const Experience = () => {
   return (
     <>
       <ambientLight intensity={0.5} />
-      <Environment preset="sunset" />
+      <Environment files="./img/venice_sunset_1k.hdr"/>
       <CameraControls 
         ref={controlsRef} 
         maxPolarAngle={Math.PI / 2}
@@ -134,7 +134,7 @@ const MonsterStage = ({
     >
       <MeshPortalMaterial side={THREE.DoubleSide} ref={portalMaterial}>
         <ambientLight intensity={0.5} />
-        <Environment preset="sunset" />
+        <Environment files="./img/venice_sunset_1k.hdr"/>
         {children}
         <mesh>
           <sphereGeometry args={[7, 64, 64]} />
